@@ -1,0 +1,28 @@
+###Folders and locations
+export SFo="/home/$USER/bin"
+export RFo="/home/$USER/Ressources"
+
+###files to consult or log
+export musicCount="$SFo/Sortedmusiccount.txt"
+export logAudacious="$RFo/Audacious.log"
+
+###shorthand variables
+export zenitySmall="--height 500 --width 400"
+export zenityMedium="--height 800 --width 400"
+export zenityLarge="--width 5000"
+export zenityTall="--height 5000"
+export zenityFS="--height 5000 --width 5000"
+export hostname=$(cat /etc/hostname)
+export keybind=$(whatbindkeyisused.sh)
+
+###Timers shorthand variables
+export timeCount=$(cat $countFile)
+export timeTemp=$(cat $tempCount)
+export timeReserve=$(cat $reserveCount)
+export timeReserveHours=$(( $timeReserve / 3600 ))
+export timeDisplay=$timeCount\ \($timeReserve\)
+export timeDisplayNicer=$timeCount\ \($timeReserveHours\)
+
+addToTemp() {
+    echo $(($timeTemp + $1)) > $tempCount
+}
